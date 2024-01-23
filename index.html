@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* #digital-watch {
+            font-size: 3em;
+        } */
+    </style>
+    <title>Digital Watch</title>
+</head>
+<body>
+    <div id="digital-watch"></div>
+
+    <script>
+        function updateDigitalWatch() {
+            const digitalWatch = document.getElementById('digital-watch');
+            const currentTime = new Date();
+            const hours = currentTime.getHours().toString().padStart(2, '0');
+            const minutes = currentTime.getMinutes().toString().padStart(2, '0');
+            const seconds = currentTime.getSeconds().toString().padStart(2, '0');
+
+            digitalWatch.innerText = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update every second
+        setInterval(updateDigitalWatch, 1000);
+
+        // Initial call to display time immediately
+        updateDigitalWatch();
+    </script>
+
+<body>
+</html>
